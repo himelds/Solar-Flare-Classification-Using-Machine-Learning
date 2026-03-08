@@ -118,3 +118,38 @@ solar-flare-classification/
 │ └── model_performance.png
 │
 └── README.md
+
+
+---
+
+## Applications
+
+The insights generated from this project can support:
+
+- Space weather forecasting systems
+- Early warning systems for solar storms
+- Protection of satellite communication infrastructure
+- Research on solar activity patterns and solar cycles
+
+---
+
+## Future Improvements
+
+Possible future improvements include:
+
+- Applying deep learning models for improved classification performance
+- Addressing class imbalance using advanced techniques
+- Developing predictive models for forecasting future solar flare events
+- Integrating additional solar observation datasets
+
+---
+
+## Author
+
+**Himel Das**
+
+MSc in Applied Artificial Intelligence and Data Analytics  
+University of Bradford
+
+---
+
