@@ -96,3 +96,36 @@ These visualizations help reveal long-term patterns and cyclical trends in solar
 ---
 
 ## Project Structure
+
+solar-flare-classification/
+│
+├── data/
+│ └── solar_flare_dataset.csv
+│
+├── notebooks/
+│ └── solar_flare_analysis.ipynb
+│
+├── visualizations/
+│ └── plots_and_figures
+│
+└── README.md
+
+
+---
+
+## Applications
+
+The insights from this project can support:
+
+- Space weather forecasting
+- Early warning systems for solar storms
+- Protection of satellite communication systems
+- Research on solar activity patterns
+
+---
+
+## Future Improvements
+
+- Apply deep learning models for improved classification performance
+- Address class imbalance using advanced techniques
+- Develop predictive models for forecasting future solar flare events
