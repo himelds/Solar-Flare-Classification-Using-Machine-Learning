@@ -101,22 +101,6 @@ These visualizations provide insights into long-term patterns and fluctuations i
 
 ---
 
-## Project Structure
-```
-solar-flare-classification/
-│
-├── data/
-│   └── solar_flare_dataset.csv
-├── notebooks/
-│   └── solar_flare_analysis.ipynb
-├── visualizations/
-│   └── plots/
-├── results/
-│   └── model_performance.png
-└── README.md
-```
----
-
 ## Applications
 
 The insights generated from this project can support:
