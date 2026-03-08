@@ -106,19 +106,14 @@ These visualizations provide insights into long-term patterns and fluctuations i
 solar-flare-classification/
 │
 ├── data/
-│ └── solar_flare_dataset.csv
-│
+│   └── solar_flare_dataset.csv
 ├── notebooks/
-│ └── solar_flare_analysis.ipynb
-│
+│   └── solar_flare_analysis.ipynb
 ├── visualizations/
-│ └── plots/
-│
+│   └── plots/
 ├── results/
-│ └── model_performance.png
-│
+│   └── model_performance.png
 └── README.md
-
 
 ---
 
