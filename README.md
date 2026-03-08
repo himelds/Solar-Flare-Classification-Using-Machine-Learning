@@ -102,7 +102,7 @@ These visualizations provide insights into long-term patterns and fluctuations i
 ---
 
 ## Project Structure
-
+```
 solar-flare-classification/
 │
 ├── data/
@@ -114,7 +114,7 @@ solar-flare-classification/
 ├── results/
 │   └── model_performance.png
 └── README.md
-
+```
 ---
 
 ## Applications
