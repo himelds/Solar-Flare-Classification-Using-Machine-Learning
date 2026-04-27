@@ -7,14 +7,33 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Solar Flare Predictor & XAI", layout="wide", initial_sidebar_state="expanded")
 
-st.title("☀️ Solar Flare Classification & Explainable AI")
+st.title("☀️ Solar Flare Classification")
 st.markdown("""
 This application predicts the class of a solar flare (C, M, or X) based on input characteristics and uses **SHAP (SHapley Additive exPlanations)** to provide a 'Glass Box' view into the AI's decision-making process.
 """)
 
+import os
+
 @st.cache_resource
 def load_artifacts():
     try:
+        if not os.path.exists('artifacts/model.pkl') or not os.path.exists('artifacts/feature_names.pkl'):
+            st.warning("Model artifacts not found. Training model automatically on the cloud... This may take a minute.")
+            from src.components.data_ingestion import DataIngestion
+            from src.components.data_transformation import DataTransformation
+            from src.components.model_trainer import ModelTrainer
+            
+            # Run the pipeline
+            ingestion = DataIngestion()
+            train_data_path, test_data_path = ingestion.initiate_data_ingestion()
+            
+            transformation = DataTransformation()
+            train_arr, test_arr, _ = transformation.initiate_data_transformation(train_data_path, test_data_path)
+            
+            trainer = ModelTrainer()
+            trainer.initiate_model_trainer(train_arr, test_arr)
+            st.success("Model trained successfully!")
+
         with open('artifacts/model.pkl', 'rb') as f:
             model = pickle.load(f)
         with open('artifacts/feature_names.pkl', 'rb') as f:
