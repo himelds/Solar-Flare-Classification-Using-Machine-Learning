@@ -1,5 +1,7 @@
 # Solar Flare Classification Using Machine Learning
 
+**🚀 Live Dashboard:** [https://solarflareclassification.streamlit.app/](https://solarflareclassification.streamlit.app/)
+
 ## Overview
 Solar flares are sudden bursts of electromagnetic radiation released from the Sun’s atmosphere. These high-energy events can significantly affect Earth's technological infrastructure, including satellite communications, navigation systems, and power grids. Understanding and predicting solar flare activity is therefore crucial for space weather monitoring and risk mitigation.
 

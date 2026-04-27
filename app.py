@@ -18,7 +18,7 @@ import os
 def load_artifacts():
     try:
         if not os.path.exists('artifacts/model.pkl') or not os.path.exists('artifacts/feature_names.pkl'):
-            st.warning("Model artifacts not found. Training model automatically on the cloud... This may take a minute.")
+            print("Model artifacts not found. Training model automatically on the cloud... This may take a minute.")
             from src.components.data_ingestion import DataIngestion
             from src.components.data_transformation import DataTransformation
             from src.components.model_trainer import ModelTrainer
@@ -37,7 +37,7 @@ def load_artifacts():
             with open('artifacts/feature_names.pkl', 'wb') as f:
                 pickle.dump(feature_names, f)
                 
-            st.success("Model trained successfully!")
+            print("Model trained successfully!")
 
         with open('artifacts/model.pkl', 'rb') as f:
             model = pickle.load(f)
