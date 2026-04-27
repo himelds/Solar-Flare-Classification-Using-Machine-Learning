@@ -33,7 +33,6 @@ def load_artifacts():
             trainer = ModelTrainer()
             trainer.initiate_model_trainer(train_arr, test_arr)
             
-            import pickle
             with open('artifacts/feature_names.pkl', 'wb') as f:
                 pickle.dump(feature_names, f)
                 
