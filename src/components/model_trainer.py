@@ -8,7 +8,7 @@ class ModelTrainer:
         self.model_path = os.path.join('artifacts', 'model.pkl')
 
     def initiate_model_trainer(self, train_arr, test_arr):
-        print("Starting model training...")
+        print("Starting model training for deployment...")
         try:
             X_train, y_train = train_arr[:, :-1], train_arr[:, -1]
             X_test, y_test = test_arr[:, :-1], test_arr[:, -1]

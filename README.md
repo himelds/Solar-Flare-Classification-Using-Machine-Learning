@@ -55,25 +55,27 @@ Additional features were created to improve analysis and model performance:
 
 These features help capture important characteristics of flare behavior.
 
-### 3. Machine Learning Models
-Two classification models were implemented and evaluated:
+### 3. Machine Learning Models & MLOps Pipeline
+A robust MLOps pipeline was implemented to evaluate multiple algorithms and select the best model for deploying a classification system for the most impactful intensity categories (C, M, and X classes):
 
+- **Random Forest Classifier** (Selected for Deployment)
+- **Decision Tree Classifier**
+- **Gradient Boosting Classifier**
 - **Logistic Regression**
-- **Random Forest**
 
-These models were trained to classify solar flare intensity categories.
+**Data Transformation:** To handle the severe class imbalance (where C-class flares vastly outnumber M and X-class flares), the **SMOTE (Synthetic Minority Over-sampling Technique)** algorithm was applied during the transformation phase to ensure the model learns minority patterns effectively.
+
+**Model Selection:** The models were evaluated using a comparative pipeline. The **Random Forest Classifier** outperformed the others and was automatically selected by the `ModelTrainer` component for final artifact creation and Streamlit deployment.
 
 ---
 
 ## Results
 
-Key results from the analysis include:
+Key results from the analysis and multi-model evaluation include:
 
-- Logistic Regression achieved approximately **65% classification accuracy**
-- Random Forest achieved approximately **64% classification accuracy**
-- Both models performed well on **majority classes (B and C)**
-- Minority classes such as **A, M, and X** were more difficult to classify due to class imbalance
-- Feature importance analysis showed that **intensity, flare duration, and time-to-peak** are key predictors for classification
+- The **Random Forest model** achieved the highest overall classification accuracy at approximately **69%**.
+- The model performed exceptionally well on the **majority class (C-Class)** with high precision and recall, but minority classes (**M and X-Class**) remain challenging to classify perfectly despite SMOTE due to the inherent complexity and extreme imbalance of the data.
+- Feature importance analysis (using **SHAP**) revealed that **intensity, flare duration, and time-to-peak** are the strongest predictors for flare classification.
 
 ---
 
@@ -86,6 +88,7 @@ The project includes several visual analyses to explore solar flare patterns:
 - Temporal trends in solar flare activity (1981–2017)
 - Distribution of daily flare occurrences
 - Analysis of **"All-Clear Days"** with no flare activity
+- Multi-model evaluation metrics (Precision, Recall, F1-Score)
 
 These visualizations provide insights into long-term patterns and fluctuations in solar activity.
 
@@ -93,13 +96,13 @@ These visualizations provide insights into long-term patterns and fluctuations i
 
 ## Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
+- **Programming:** Python
+- **Data Processing:** Pandas, NumPy
+- **Machine Learning:** Scikit-learn, SMOTE (imbalanced-learn)
+- **Interpretability:** SHAP
+- **Visualization:** Matplotlib, Seaborn
+- **Deployment & Web App:** Streamlit
+- **Environment:** Jupyter Notebook, Modular MLOps Architecture
 
 ---
 
