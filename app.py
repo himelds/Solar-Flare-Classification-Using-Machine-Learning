@@ -28,10 +28,15 @@ def load_artifacts():
             train_data_path, test_data_path = ingestion.initiate_data_ingestion()
             
             transformation = DataTransformation()
-            train_arr, test_arr, _ = transformation.initiate_data_transformation(train_data_path, test_data_path)
+            train_arr, test_arr, feature_names = transformation.initiate_data_transformation(train_data_path, test_data_path)
             
             trainer = ModelTrainer()
             trainer.initiate_model_trainer(train_arr, test_arr)
+            
+            import pickle
+            with open('artifacts/feature_names.pkl', 'wb') as f:
+                pickle.dump(feature_names, f)
+                
             st.success("Model trained successfully!")
 
         with open('artifacts/model.pkl', 'rb') as f:
